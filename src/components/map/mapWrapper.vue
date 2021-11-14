@@ -1,17 +1,17 @@
-<template>  
-    <routemap style="height:100%" :coords="coordinates" :moving="moving"/>  
+<template>
+  <routemap style="height: 100%" :coords="coordinates" :moving="moving" />
 </template>
 
 <script>
-import routemap from './routemap.vue';
-import polyline from '@/utils/polyline';
-import lines from '@/utils/dummyPolylines';
+import routemap from "./routemap.vue";
+import polyline from "@/utils/polyline";
+import lines from "@/utils/dummyPolylines";
 export default {
-  name: 'mapWrapper',
+  name: "mapWrapper",
   data: () => ({
-    coordinates: lines.map(line=>polyline.decode(line,6))
+    coordinates: lines.map((line) => polyline.decode(line, 6)),
   }),
-  props:{ moving: Boolean, },
+  props: { moving: Boolean },
 
   components: {
     routemap,

@@ -1,16 +1,28 @@
- <template>
- <Toolbar>
+<template>
+  <Toolbar>
     <template #left>
-        <Button label="New" icon="pi pi-plus" class="p-mr-2" />
-        <Button label="Upload" icon="pi pi-upload" class="p-button-success" />
-        <i class="pi pi-bars p-toolbar-separator p-mr-2" />
-        
+      <a href="/" class="title">
+        <span>Strava Activity Map </span>
+      </a>
     </template>
 
     <template #right>
-        <Button icon="pi pi-search" class="p-mr-2" />
-        <Button icon="pi pi-calendar" class="p-button-success p-mr-2" />
-        <Button icon="pi pi-times" class="p-button-danger" />
+      <Button class="p-button-link p-button-outlined">
+        <a href="https://github.com/kevhauma/strava-vue" target="_blank">
+          <img alt="logo" src="/img/github.png" style="width: 1.5rem" />
+        </a>
+      </Button>
     </template>
-</Toolbar>
+  </Toolbar>
 </template>
+<style scoped lang="scss">
+.title {
+  font-weight: 800;
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+</style>

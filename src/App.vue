@@ -1,23 +1,23 @@
 <template>
-  <div class="app">    
+  <div class="app">
     <toolbar />
-
-    <router-view class="route-view"/>
+    <router-view class="route-view" />
   </div>
 </template>
-  <script>
-  import Toolbar from '@/components/Toolbar.vue'
-  export default {
-    data:() => ({}),
-components:{
-  Toolbar
-}
-  }
-  </script>
+
+<script>
+import Toolbar from "@/components/Toolbar.vue";
+export default {
+  data: () => ({}),
+  components: {
+    Toolbar,
+  },
+};
+</script>
 
 <style lang="scss">
 body {
-  height:100vh;
+  height: 100vh;
   margin: 0;
   padding: 0;
 }
@@ -27,17 +27,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin: 0; height: 100%; overflow-x: hidden; overflow-y: auto; background-color:
-var(--surface-b); font-family: var(--font-family); font-weight: 400; color:
-var(--text-color);
-
+  margin: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: var(--surface-b);
+  font-family: var(--font-family);
+  font-weight: 400;
+  color: var(--text-color);
 }
-.app{
+.app {
   height: 100%;
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
 }
-.router-view{
+.router-view {
   flex-grow: 1;
 }
 </style>

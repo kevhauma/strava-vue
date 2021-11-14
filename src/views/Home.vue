@@ -1,45 +1,42 @@
 <template>
-  <main class="main">      
+  <main class="main">
     <div class="popover">
-      <strava-login/>
+      <strava-login />
     </div>
-    <mapWrapper :moving="true"/> 
-    
-
+    <mapWrapper :moving="true" />
   </main>
 </template>
 
 <script>
-import mapWrapper from '@/components/map/mapWrapper.vue';
-import stravaLogin from '@/components/stravaLogin.vue';
+import mapWrapper from "@/components/map/mapWrapper.vue";
+import stravaLogin from "@/components/stravaLogin.vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
   data: () => ({
-    display:true,
+    display: true,
   }),
   components: {
     mapWrapper,
-    stravaLogin
+    stravaLogin,
   },
 };
 </script>
 
 <style scoped>
-.main{
+.main {
   height: 100%;
   margin: 0;
   position: relative;
 }
-.popover{
+.popover {
   position: absolute;
   z-index: 15;
   height: 100%;
   width: 100vw;
-  background: rgba(15,15,15,0.2);
+  background: rgba(15, 15, 15, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 </style>
