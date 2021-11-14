@@ -7,6 +7,9 @@
     </template>
 
     <template #right>
+      <a href="/about">
+        <Button class="p-button-outlined"> More </Button>
+      </a>
       <Button class="p-button-link p-button-outlined">
         <a href="https://github.com/kevhauma/strava-vue" target="_blank">
           <img alt="logo" src="/img/github.png" style="width: 1.5rem" />
@@ -19,8 +22,6 @@
 .title {
   font-weight: 800;
   font-size: 2rem;
-  color: white;
-  text-decoration: none;
   &:hover {
     cursor: pointer;
   }

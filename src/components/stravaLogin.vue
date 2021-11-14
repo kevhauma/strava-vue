@@ -1,5 +1,5 @@
 <template>
-  <Card class="card">
+  <Card class="card shadow-8 py-4 px-2 select-none">
     <template #header>
       <div class="icon-wrapper">
         <img class="icon-img" alt="strava icon" src="/img/strava.png" />
@@ -37,6 +37,7 @@ export default {
   max-width: 500px;
   max-height: 800px;
   border-radius: 30px;
+  //padding: 16px 8px;
 }
 .icon-img {
   width: 200px;

@@ -11,6 +11,7 @@ import PrimeComponents from "./utils/PrimeComponents";
 import "./vela-blue-copy.css";
 import "primevue/resources/primevue.css";
 import "primeicons/primeicons.css";
+import "primeflex/primeflex.css";
 
 let app = createApp(App);
 app.use(store);
