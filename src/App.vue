@@ -1,8 +1,8 @@
 <template>
-  <div style="height:100%">    
+  <div class="app">    
     <toolbar />
 
-    <router-view style="height:100%"/>
+    <router-view class="route-view"/>
   </div>
 </template>
   <script>
@@ -31,5 +31,13 @@ body {
 var(--surface-b); font-family: var(--font-family); font-weight: 400; color:
 var(--text-color);
 
+}
+.app{
+  height: 100%;
+  display: flex;
+  flex-direction: column;  
+}
+.router-view{
+  flex-grow: 1;
 }
 </style>

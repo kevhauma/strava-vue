@@ -10,7 +10,7 @@ import PrimeComponents from './utils/PrimeComponents';
 
 
 import 'primevue/resources/themes/vela-blue/theme.css'
-//import 'primevue/resources/primevue.min.css'
+import 'primevue/resources/primevue.css'
 import 'primeicons/primeicons.css'
 
 

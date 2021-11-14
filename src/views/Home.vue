@@ -1,24 +1,17 @@
 <template>
-  <main style="height:100%">    
-    <mapWrapper style="height:100%"/>
-    <Dialog :visible="display" :modal="true" :closable="false" :closeonescape="false" :draggable="false" appendTo="self" style="margin-top: 73px">
-    <template #header>
-		<h3>Header</h3>
-	</template>
-
-	Content
-
-	<template #footer>
-		<Button label="No" icon="pi pi-times" class="p-button-text"/>
-        <Button label="Yes" icon="pi pi-check" autofocus />
-	</template>
-</Dialog>
+  <main class="main">      
+    <div class="popover">
+      <strava-login/>
+    </div>
+    <mapWrapper :moving="true"/> 
+    
 
   </main>
 </template>
 
 <script>
 import mapWrapper from '@/components/map/mapWrapper.vue';
+import stravaLogin from '@/components/stravaLogin.vue';
 
 export default {
   name: 'Home',
@@ -27,6 +20,26 @@ export default {
   }),
   components: {
     mapWrapper,
+    stravaLogin
   },
 };
 </script>
+
+<style scoped>
+.main{
+  height: 100%;
+  margin: 0;
+  position: relative;
+}
+.popover{
+  position: absolute;
+  z-index: 15;
+  height: 100%;
+  width: 100vw;
+  background: rgba(15,15,15,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+</style>

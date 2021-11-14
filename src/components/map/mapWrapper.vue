@@ -1,7 +1,5 @@
-<template>
-  <div style="height:100%">    
-    <routemap style="height:100%" :coords="coordinates"/>
-  </div>
+<template>  
+    <routemap style="height:100%" :coords="coordinates" :moving="moving"/>  
 </template>
 
 <script>
@@ -13,6 +11,8 @@ export default {
   data: () => ({
     coordinates: lines.map(line=>polyline.decode(line,6))
   }),
+  props:{ moving: Boolean, },
+
   components: {
     routemap,
   },

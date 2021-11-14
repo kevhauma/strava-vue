@@ -31,17 +31,27 @@
 export default {
   name: 'mapWrapper',
   data: () => ({
-    center: [116.54875, 40.45064],
+      center: [0, 10],
       projection: 'EPSG:4326',
-      zoom: 17,
+      zoom: 4,
       rotation:0,
       radius:40,
       strokeWidth:10,
       strokeColor:'red',
+
   }),
   props:{
-    coords: {type: Array}
+    coords: {type: Array},
+    moving: Boolean,
   },
+  mounted(){
+  if(this.moving){
+    this.moving_interval = setInterval(()=>{
+      let [x,y]= this.center
+      this.center = [x+=0.1,y]
+      },16)
+  }
+  }
 };
 </script>
 
