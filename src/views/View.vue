@@ -1,15 +1,11 @@
 <template>
   <main class="main">
-    <div class="popover">
-      <strava-login />
-    </div>
     <routeMap :moving="true" :coords="[]" />
   </main>
 </template>
 
 <script>
 import routeMap from "@/components/map/routemap.vue";
-import stravaLogin from "@/components/stravaLogin.vue";
 
 export default {
   name: "Home",
@@ -18,7 +14,6 @@ export default {
   }),
   components: {
     routeMap,
-    stravaLogin,
   },
 };
 </script>
