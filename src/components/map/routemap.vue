@@ -39,7 +39,7 @@ export default {
   name: "routeMap",
   data: () => ({
     center: [-150, 10],
-    projection: "EPSG:4326",
+    projection: "EPSG:3857",
     zoom: 4,
     rotation: 0,
     radius: 40,

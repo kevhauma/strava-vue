@@ -57,7 +57,15 @@ const polyline = {
       lat += latitude_change;
       lng += longitude_change;
 
-      coordinates.push([(lng / factor) * 10, (lat / factor) * 10]);
+      let newLat = (lat / factor) * 10;
+      let newLng = (lng / factor) * 10;
+
+      let x = (newLng * 20037508.34) / 180;
+      let y =
+        Math.log(Math.tan(((90 + newLat) * Math.PI) / 360)) / (Math.PI / 180);
+      y = (y * 20037508.34) / 180;
+
+      coordinates.push([x, y]);
     }
 
     return coordinates;
