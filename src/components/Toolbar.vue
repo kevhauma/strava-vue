@@ -1,6 +1,9 @@
 <template>
   <Toolbar>
     <template #left>
+      <Button v-if="sideBarBtn" class="p-button-text p-button-rounded">
+        sidebar
+      </Button>
       <a href="/" class="title">
         <span>Strava Activity Map </span>
       </a>
@@ -18,6 +21,15 @@
     </template>
   </Toolbar>
 </template>
+<script>
+export default {
+  data: () => ({}),
+  props: {
+    sideBarBtn: Boolean,
+  },
+};
+</script>
+
 <style scoped lang="scss">
 .title {
   font-weight: 800;

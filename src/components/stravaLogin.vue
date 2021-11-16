@@ -1,6 +1,9 @@
 <template>
   <Card class="card shadow-8 py-4 px-2 select-none">
     <template #header>
+      <Message v-if="errors" severity="error" :closable="false">
+        {{ errors }}
+      </Message>
       <div class="icon-wrapper">
         <img class="icon-img" alt="strava icon" src="/img/strava.png" />
       </div>
@@ -40,7 +43,7 @@ export default {
 
     this.stravalink = `http://www.strava.com/oauth/authorize?client_id=${client_id}&response_type=code&scope=${scope}&approval_prompt=force&redirect_uri=${responseURL}`;
   },
-  props: {},
+  props: { errors: Object },
 };
 </script>
 <style scoped lang="scss">

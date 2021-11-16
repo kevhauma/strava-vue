@@ -1,15 +1,18 @@
 <template>
   <main class="main">
-    <map-wrapper />
+    <map-wrapper class="map" :isSiderbarOpen="isSiderbarOpen" />
   </main>
 </template>
 
 <script>
-import MapWrapper from "../components/map/mapWrapper.vue";
+import MapWrapper from "../components/map/MapWrapper.vue";
 
 export default {
-  name: "Home",
+  name: "View",
   data: () => ({}),
+  props: {
+    isSiderbarOpen: Boolean,
+  },
   components: {
     MapWrapper,
   },
@@ -20,6 +23,5 @@ export default {
 .main {
   height: 100%;
   margin: 0;
-  position: relative;
 }
 </style>

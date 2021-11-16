@@ -1,16 +1,28 @@
 <template>
   <div class="app">
-    <toolbar />
-    <router-view class="route-view" />
+    <toolbar :sideBarBtn="sideBarBtn" @toggleSidebar="toggleSidebar" />
+    <router-view class="route-view" :isSiderbarOpen="isSiderbarOpen" />
   </div>
 </template>
 
 <script>
 import Toolbar from "@/components/Toolbar.vue";
 export default {
-  data: () => ({}),
+  data: () => ({
+    isSiderbarOpen: false,
+    sideBarBtn: false,
+  }),
   components: {
     Toolbar,
+  },
+  mounted() {
+    console.log(this.$route);
+    this.sideBarBtn = ["View"].includes(this.$route.name);
+  },
+  methods: {
+    toggleSidebar() {
+      this.isSiderbarOpen = !this.isSiderbarOpen;
+    },
   },
 };
 </script>

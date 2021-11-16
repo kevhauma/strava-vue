@@ -1,21 +1,28 @@
 <template>
   <main class="main">
     <div class="popover">
-      <strava-login />
+      <strava-login :errors="error" />
     </div>
     <routeMap :moving="true" :coords="[]" />
   </main>
 </template>
 
 <script>
-import routeMap from "@/components/map/routemap.vue";
-import stravaLogin from "@/components/stravaLogin.vue";
+import routeMap from "@/components/map/RouteMap.vue";
+import stravaLogin from "@/components/StravaLogin.vue";
 
 export default {
   name: "Home",
   data: () => ({
     display: true,
+    error: null,
   }),
+  mounted() {
+    this.error = this.$route.params.error;
+  },
+  props: {
+    errors: Object,
+  },
   components: {
     routeMap,
     stravaLogin,
