@@ -17,10 +17,12 @@
       </p>
     </template>
     <template #footer>
-      <Button type="button" class="p-button-outlined p-button-help">
-        <img alt="logo" src="/img/strava.png" style="width: 1.5rem" />
-        <span class="strava-button-text"> Please log into Strava </span>
-      </Button>
+      <a :href="stravalink">
+        <Button type="button" class="p-button-outlined p-button-help">
+          <img alt="logo" src="/img/strava.png" style="width: 1.5rem" />
+          <span class="strava-button-text"> Please log into Strava </span>
+        </Button>
+      </a>
     </template>
   </Card>
 </template>
@@ -28,7 +30,16 @@
 <script>
 export default {
   name: "stravaLogin",
-  data: () => ({}),
+  data: () => ({
+    stravalink: null,
+  }),
+  mounted() {
+    const client_id = "43070";
+    const responseURL = `${window.location.href.split("?")[0]}view`;
+    const scope = "activity:read";
+
+    this.stravalink = `http://www.strava.com/oauth/authorize?client_id=${client_id}&response_type=code&scope=${scope}&approval_prompt=force&redirect_uri=${responseURL}`;
+  },
   props: {},
 };
 </script>
