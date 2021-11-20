@@ -19,7 +19,7 @@ import ActivitySelector from "./ActivitySelector.vue";
 const heroku = "https://strava-code-to-token.herokuapp.com/strava";
 
 export default {
-  name: "mapWrapper",
+  name: "MapWrapper",
   data: () => ({
     coordinates: [],
     loading: false,

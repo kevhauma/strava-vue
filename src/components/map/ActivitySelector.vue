@@ -18,7 +18,7 @@
 import ActivityEntry from "./ActivityEntry.vue";
 
 export default {
-  name: "RouteSelector",
+  name: "ActivitySelector",
   data: () => ({
     activityDetails: [],
   }),

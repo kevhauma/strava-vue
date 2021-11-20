@@ -36,7 +36,7 @@
 
 <script>
 export default {
-  name: "routeMap",
+  name: "RouteMap",
   data: () => ({
     center: [-150, 10],
     projection: "EPSG:3857",
