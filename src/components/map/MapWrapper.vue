@@ -4,6 +4,7 @@
       class="sidebar"
       :activities="activities"
       :config="config"
+      :loading="loading"
       :isSiderbarOpen="isSiderbarOpen"
       @onRouteLoad="routeLoaded"
       @onRouteChange="routeChanged"
@@ -15,7 +16,7 @@
 <script>
 import RouteMap from "./RouteMap.vue";
 import ActivitySelector from "./ActivitySelector.vue";
-
+import polyline from "@/utils/polyline";
 const heroku = "https://strava-code-to-token.herokuapp.com/strava";
 
 export default {
@@ -45,6 +46,7 @@ export default {
       );
       let routesOverview = await routesOverviewRes.json();
       this.activities = routesOverview;
+      this.loading = false;
       // this.coordinates = routesOverview.map((run) =>
       //   polyline.decode(run.map.summary_polyline, 6)
       // );
@@ -54,6 +56,11 @@ export default {
       //   params: { error: "Something went wrong, please try again" },
       // });
     }
+  },
+  methods: {
+    routeLoaded(activity) {
+      this.coordinates.push(polyline.decode(activity.map.summary_polyline, 6));
+    },
   },
   props: {
     isSiderbarOpen: Boolean,

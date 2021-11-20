@@ -1515,6 +1515,11 @@ async-limiter@~1.0.0:
   resolved "https://registry.yarnpkg.com/async-limiter/-/async-limiter-1.0.1.tgz#dd379e94f0db8310b08291f9d64c3209766617fd"
   integrity sha512-csOlWGAcRFJaI6m+F2WKdnMKr4HhdhFVBk0H/QbJFMCr+uO2kwohwXQPxw/9OCxp05r5ghVBFSyioixx3gfkNQ==
 
+async@0.2.x:
+  version "0.2.10"
+  resolved "https://registry.yarnpkg.com/async/-/async-0.2.10.tgz#b6bbe0b0674b9d719708ca38de8c237cb526c3d1"
+  integrity sha1-trvgsGdLnXGXCMo43owjfLUmw9E=
+
 async@2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/async/-/async-2.6.1.tgz#b245a23ca71930044ec53fa46aa00a3e87c6a610"
@@ -2718,6 +2723,14 @@ cosmiconfig@^5.0.0:
     is-directory "^0.3.1"
     js-yaml "^3.13.1"
     parse-json "^4.0.0"
+
+
+country-reverse-geocoding@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/country-reverse-geocoding/-/country-reverse-geocoding-0.2.2.tgz#d22b0f45be3ddc6ab58338601fe2241ce9c34cf7"
+  integrity sha1-0isPRb493Gq1gzhgH+IkHOnDTPc=
+  dependencies:
+    fwk "1.0.x"
 
 create-ecdh@^4.0.0:
   version "4.0.4"
@@ -4382,6 +4395,14 @@ functional-red-black-tree@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
   integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
+
+fwk@1.0.x:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/fwk/-/fwk-1.0.11.tgz#098c8f7172ec25134ec86a1473affa364d404347"
+  integrity sha1-CYyPcXLsJRNOyGoUc6/6Nk1AQ0c=
+  dependencies:
+    async "0.2.x"
+    should "0.6.x"
 
 gauge@~2.7.3:
   version "2.7.4"
@@ -9139,6 +9160,11 @@ shellwords@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
   integrity sha512-vFwSUfQvqybiICwZY5+DAWIPLKsWO31Q91JSKl3UYv+K5c2QRPzn0qzec6QPu1Qc9eHYItiP3NdJqNVqetYAww==
+
+should@0.6.x:
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/should/-/should-0.6.3.tgz#d4b55335c8908f3a6c47970b687f750372acdc73"
+  integrity sha1-1LVTNciQjzpsR5cLaH91A3Ks3HM=
 
 side-channel@^1.0.4:
   version "1.0.4"

@@ -19,13 +19,49 @@ body {
   color: var(--text-color);
 }
 
+
 .glass {
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.17)!important; 
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)!important;
   backdrop-filter: blur(16px)!important;
+  color: black;
   -webkit-backdrop-filter: blur(16px)!important;
 }
+
+/* width */
+::-webkit-scrollbar {
+  border-radius: 5px;
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+   background: rgba(100, 100, 100, 0.17)!important; 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5)!important;
+  backdrop-filter: blur(16px)!important;
+  color: black;
+  -webkit-backdrop-filter: blur(16px)!important; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.17)!important; 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5)!important;
+  backdrop-filter: blur(16px)!important;    
+  -webkit-backdrop-filter: blur(16px)!important; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+ background: rgba(100, 100, 210020, 0.17)!important; 
+ box-shadow: 0 4px 30px rgba(0, 0, 0, 1)!important;
+  backdrop-filter: blur(16px)!important;  
+  -webkit-backdrop-filter: blur(16px)!important; 
+}
+
+
+
 .shadow {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)!important;
 }
