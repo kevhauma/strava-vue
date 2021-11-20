@@ -2,7 +2,7 @@
   <ol-map
     :loadTilesWhileAnimating="true"
     :loadTilesWhileInteracting="true"
-    style="height: 100%"
+    class="mapbackground"
   >
     <ol-view
       ref="view"
@@ -55,7 +55,8 @@ export default {
     if (this.moving) {
       this.moving_interval = setInterval(() => {
         let [x, y] = this.center;
-        x = x > 180 ? -180 : x + 0.1;
+        x = x > 20026376.39 ? -20026376.39 : x + 2500;
+        x += 10000;
         this.center = [x, y];
       }, 16);
     }
@@ -67,4 +68,13 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.mapbackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+</style>

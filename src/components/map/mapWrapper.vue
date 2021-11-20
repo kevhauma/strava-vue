@@ -1,8 +1,10 @@
 <template>
   <div class="wrapper">
-    <route-selector
+    <activity-selector
       class="sidebar"
-      :routes="routes"
+      :activities="activities"
+      :config="config"
+      :isSiderbarOpen="isSiderbarOpen"
       @onRouteLoad="routeLoaded"
       @onRouteChange="routeChanged"
     />
@@ -12,19 +14,17 @@
 
 <script>
 import RouteMap from "./RouteMap.vue";
-import RouteSelector from "./RouteSelector.vue";
+import ActivitySelector from "./ActivitySelector.vue";
 
 const heroku = "https://strava-code-to-token.herokuapp.com/strava";
-
-let getConfig = {
-  headers: {},
-};
 
 export default {
   name: "mapWrapper",
   data: () => ({
     coordinates: [],
     loading: false,
+    activities: [],
+    config: { headers: {} },
   }),
   async mounted() {
     this.loading = true;
@@ -38,21 +38,21 @@ export default {
         ac: data.access_token,
         id: data.athlete.id,
       };
-      getConfig.headers.Authorization = `Bearer ${creds.ac}`;
+      this.config.headers.Authorization = `Bearer ${creds.ac}`;
       let routesOverviewRes = await fetch(
         `https://www.strava.com/api/v3/athletes/${creds.id}/activities?per_page=100`,
-        getConfig
+        this.config
       );
       let routesOverview = await routesOverviewRes.json();
-      this.routes = routesOverview;
+      this.activities = routesOverview;
       // this.coordinates = routesOverview.map((run) =>
       //   polyline.decode(run.map.summary_polyline, 6)
       // );
     } catch (e) {
-      this.$router.push({
-        name: "Home",
-        params: { error: "Something went wrong, please try again" },
-      });
+      // this.$router.push({
+      //   name: "Home",
+      //   params: { error: "Something went wrong, please try again" },
+      // });
     }
   },
   props: {
@@ -60,7 +60,7 @@ export default {
   },
   components: {
     RouteMap,
-    RouteSelector,
+    ActivitySelector,
   },
 };
 </script>
@@ -71,9 +71,6 @@ export default {
   .map {
     flex-grow: 1;
     height: 100%;
-  }
-  .sidebar {
-    width: 150px;
   }
 }
 </style>
