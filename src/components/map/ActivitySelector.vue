@@ -5,6 +5,7 @@
         v-for="activity in activities"
         :key="activity.id"
         :activityDetail="activityDetail(activity)"
+        :displayDetails="isSiderbarOpen"
       />
     </div>
     <div v-if="internalLoading">
@@ -61,7 +62,7 @@ export default {
   },
   computed: {
     sidebarClass() {
-      return this.isSiderbarOpen ? "sidebar--open" : "siderbar--closed";
+      return this.isSiderbarOpen ? "sidebar--open" : "sidebar--closed";
     },
   },
   watch: {
@@ -79,13 +80,14 @@ export default {
 .sidebar {
   height: 100%;
   z-index: 1;
-  transition: width 0.2s ease;
+  transition: transform 0.2s ease;
   overflow-y: scroll;
+  width: 350px;
   &--open {
-    width: 350px;
+    transform: translate(0px, 0px);
   }
   &--closed {
-    width: 0;
+    transform: translate(-300px, 0px);
   }
 }
 </style>
